@@ -1,50 +1,43 @@
 header:
-  - titles:
-      # @start locale config
-      en      : &EN       Archive
-      en-GB   : *EN
-      en-US   : *EN
-      en-CA   : *EN
-      en-AU   : *EN
-      zh-Hans : &ZH_HANS  归档
-      zh      : *ZH_HANS
-      zh-CN   : *ZH_HANS
-      zh-SG   : *ZH_HANS
-      zh-Hant : &ZH_HANT  歸檔
-      zh-TW   : *ZH_HANT
-      zh-HK   : *ZH_HANT
-      ko      : &KO       아카이브
-      ko-KR   : *KO
-      fr      : &FR       Archives
-      fr-BE   : *FR
-      fr-CA   : *FR
-      fr-CH   : *FR
-      fr-FR   : *FR
-      fr-LU   : *FR
-      # @end locale config
+  - title: 算法
+    url: /algorithm/index
+
+  - title: Android
+    url: /android/index
+
+  - title: 归档
     url: /archive.html
 
-  - titles:
-      # @start locale config
-      en      : &EN       About
-      en-GB   : *EN
-      en-US   : *EN
-      en-CA   : *EN
-      en-AU   : *EN
-      zh-Hans : &ZH_HANS  关于
-      zh      : *ZH_HANS
-      zh-CN   : *ZH_HANS
-      zh-SG   : *ZH_HANS
-      zh-Hant : &ZH_HANT  關於
-      zh-TW   : *ZH_HANT
-      zh-HK   : *ZH_HANT
-      ko      : &KO       소개
-      ko-KR   : *KO
-      fr      : &FR       À propos
-      fr-BE   : *FR
-      fr-CA   : *FR
-      fr-CH   : *FR
-      fr-FR   : *FR
-      fr-LU   : *FR
-      # @end locale config
+  - title: About
     url: /about.html
+
+android:
+  - title: Android基础
+    children:
+      - title: View绘制原理
+      - title: 事件分发机制
+  - title: Jetpack相关
+    children:
+      - title: LifeCircle原理
+      - title: LiveData源码分析
+      - title: ViewModel源码分析
+  - title: 性能优化相关
+    children:
+      - title: 启动速度优化
+
+
+
+algorithm:
+    - title: 数组
+      children:
+        - title: 排序总结
+          url: /algorithm/index
+        - title: 多数之和总结
+          url: /algorithm/two-sum
+    - title: 链表
+      children:
+        - title: 反转链表
+        - title: 链表合并
+    - title: 二叉树
+      children:
+        - title: 求树的镜像
