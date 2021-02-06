@@ -1,1 +1,0 @@
-window.TEXT_SEARCH_DATA={'posts':[{'title':"Welcome",'url':"/2018/07/01/welcome.html"},{'title':"算法",'url':"/algorithm/index"},{'title':"Android相关",'url':"/android/index"},{'title':"Welcome to Jekyll!",'url':"/2021/02/04/welcome-to-jekyll.html"}]};
