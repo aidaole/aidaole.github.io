@@ -1,16 +1,43 @@
 header:
-  - titles:
-      # @start locale config
-      en      : &EN       Archive
-      zh-Hans : &ZH_HANS  归档
-      fr      : &FR       Archives
-      # @end locale config
+  - title: 算法
+    url: /algorithm/index
+
+  - title: Android
+    url: /android/index
+
+  - title: 归档
     url: /archive.html
 
-  - titles:
-      # @start locale config
-      en      : &EN       About
-      zh-Hans : &ZH_HANS  关于
-      fr      : &FR       À propos
-      # @end locale config
+  - title: About
     url: /about.html
+
+android:
+  - title: Android基础
+    children:
+      - title: View绘制原理
+      - title: 事件分发机制
+  - title: Jetpack相关
+    children:
+      - title: LifeCircle原理
+      - title: LiveData源码分析
+      - title: ViewModel源码分析
+  - title: 性能优化相关
+    children:
+      - title: 启动速度优化
+
+
+
+algorithm:
+    - title: 数组
+      children:
+        - title: 排序总结
+          url: /algorithm/index
+        - title: 多数之和总结
+          url: /algorithm/two-sum
+    - title: 链表
+      children:
+        - title: 反转链表
+        - title: 链表合并
+    - title: 二叉树
+      children:
+        - title: 求树的镜像
