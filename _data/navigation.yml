@@ -1,5 +1,5 @@
 header:
-  - title: 算法
+  - title: 算法总结
     url: /algorithm/index
 
   - title: Android
@@ -8,7 +8,7 @@ header:
   - title: 归档
     url: /archive.html
 
-  - title: About
+  - title: 关于
     url: /about.html
 
 android:
@@ -28,16 +28,22 @@ android:
 
 
 algorithm:
-    - title: 数组
+    - title: 算法第4版
+      children:
+        - title: 排序
+          url: /algorithm/alogrithm4-sort
+        - title: 查找
+          url: /algorithm/alogrithm4-search
+    - title: 数组题目
       children:
         - title: 排序总结
           url: /algorithm/index
         - title: 多数之和总结
           url: /algorithm/two-sum
-    - title: 链表
+    - title: 链表题目
       children:
         - title: 反转链表
         - title: 链表合并
-    - title: 二叉树
+    - title: 二叉树题目
       children:
         - title: 求树的镜像
