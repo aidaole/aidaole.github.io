@@ -18,6 +18,8 @@ permalink: /algorithm/alogrithm4-sort
 2. sort抽象方法，每种排序自己实现
 3. less（小于）和lessEqual （小于等于）排序中比较大小用这两个方法，不做值的对比
 
+<!--more-->
+
 ```java
 /**
  * Sort用到的公用方法
