@@ -10,11 +10,13 @@
 2. 怎么通过extensions读取外部配置，应用到插件中
 3. 怎么发布一个gradle插件
 
+可以直接看代码，Github源码地址：[ImgCompressPlugin](https://github.com/aidaole/ImgCompressPlugin)
+
 ## 1. 创建gradle插件
 
 创建一个 java library, name: img_plugin
 
-![Alt text](./images/image_compress/create_module.png)
+![Alt text](https://aidaole.github.io/other/images/image_compress/create_module.png)
 
 修改 image_plugin 的 build.gradle 文件
 
@@ -219,11 +221,11 @@ class Tinypng(private val apiKey: String, private val imgTypesStr: String) {
 
 代码写完之后，我们需要发布一下插件。找到 gralde task 中 publishing 下的 `publishMavenPublicationToMavenRepository` 点击发布
 
-![Alt text](./images/image_compress/publishing_task.png)
+![Alt text](https://aidaole.github.io/other/images/image_compress/publishing_task.png)
 
 发布成功之后，可以在项目中 `repo/` 文件夹下找到插件
 
-![Alt text](./images/image_compress/publish_succ_img.png)
+![Alt text](https://aidaole.github.io/other/images/image_compress/publish_succ_img.png)
 
 ### 然后在项目中应用插件
 
