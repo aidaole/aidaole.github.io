@@ -9,20 +9,18 @@
 1. 如何编写gradle插件
 2. 怎么通过extensions读取外部配置，应用到插件中
 3. 怎么发布一个gradle插件
+4. 提供一个好用的图片压缩批量插件
 
-可以直接看代码，Github源码地址：[ImgCompressPlugin](https://github.com/aidaole/ImgCompressPlugin)
+可以直接看代码，Github源码地址：[TinypngPlugin](https://github.com/aidaole/TinypngPlugin)
 
 ## 1. 创建gradle插件
 
-创建一个 java library, name: img_plugin
+创建一个 java library: `tinypng_plugin`
 
-![Alt text](https://aidaole.github.io/other/images/image_compress/create_module.png)
-
-修改 image_plugin 的 build.gradle 文件
+修改 `tinypng_plugin` 的 build.gradle 文件
 
 ```gradle
 plugins {
-    id 'java-library'
     id "kotlin"
     id "java-gradle-plugin"
     id "maven-publish"
@@ -40,9 +38,9 @@ gradlePlugin {
     plugins {
         simplePlugin {
             // apply plugin: 此id
-            id = "com.aidaole.plugin.imgCompress"
+            id = "com.aidaole.plugin.tinypng"
             // 这个类路径需要指向插件的入口类
-            implementationClass = "com.aidaole.plugin.imgcompress.ImgCompressPlugin"
+            implementationClass = "com.aidaole.plugin.imgcompress.TingpngPluginImpl"
         }
     }
 }
@@ -60,7 +58,7 @@ afterEvaluate {
             maven(MavenPublication) {
                 // {groupId:artifactId:version} 为buildScript 中依赖的 classpath 插件地址
                 groupId = 'com.aidaole.plugin'
-                artifactId = 'imgcompress'
+                artifactId = 'tinypng'
                 version = '1.0'
                 from components.java
             }
@@ -71,22 +69,21 @@ afterEvaluate {
 
 ## 2. 创建Plugin入口
 
-创建Plugin实现类入口 **ImgCompressPlugin.kt**
+创建Plugin实现类入口 **TingpngPluginImpl.kt**
 
 代码中个主要包含
 1. extensions 中参数的读取
 2. 通过代码添加一个 task
 
 ```kt
-class ImgCompressPlugin : Plugin<Project> {
+class TingpngPluginImpl : Plugin<Project> {
     override fun apply(project: Project) {
         log("config plugin start")
-        // imgCompressConfig 为 plugin配置名字，具体的配置参数在 CompressExtension 中定义
-        val config = project.extensions.create("imgCompressConfig", CompressExtension::class.java)
-
+        // 注册插件的extensions配置
+        val config = project.extensions.create("tinypngConfig", TinypngConfig::class.java)
         // 创建图片压缩的task, 其中 apiKey 和 imgTypes 参数通过 extensions 中的配置读取
         project.tasks.register("compressImg") { compressTask ->
-            compressTask.group = "com.aidaole.plugin"
+            compressTask.group = "tinypng"
             compressTask.doLast {
                 val apiKey = config.apiKey ?: ""
                 val imgTypes = config.imgTypes ?: ""
@@ -94,7 +91,6 @@ class ImgCompressPlugin : Plugin<Project> {
                 log("imgTypes: $imgTypes")
                 log("root: ${project.rootProject.rootDir.absolutePath}")
 
-                // task 中启动tinypng压缩流程
                 val tinyPng = Tinypng(apiKey, imgTypes)
                 tinyPng.compressAllFile(project.rootProject.rootDir.absolutePath)
             }
@@ -104,17 +100,17 @@ class ImgCompressPlugin : Plugin<Project> {
 }
 ```
 
-配置类 **CompressExtension.java**
+配置类 **TinypngConfig.java**
 
 ```java
-public class CompressExtension {
+public class TinypngConfig {
     public String apiKey = "";
     public String imgTypes = "";
 
-    public CompressExtension() {
+    public TinypngConfig() {
     }
 
-    public CompressExtension(String apiKey, String imgTypes) {
+    public TinypngConfig(String apiKey, String imgTypes) {
         this.apiKey = apiKey;
         this.imgTypes = imgTypes;
     }
@@ -153,7 +149,7 @@ class Tinypng(private val apiKey: String, private val imgTypesStr: String) {
         log("imageTypes: $imgTypes")
     }
 
-    // 扫描project中所有图片
+    // 递归所有图片
     fun compressAllFile(filePath: String) {
         if (filePath.isExcludeFile()) {
             return
@@ -168,7 +164,7 @@ class Tinypng(private val apiKey: String, private val imgTypesStr: String) {
         }
     }
 
-    // 调用tinypng接口压缩图片
+    // 调用api压缩图片
     private fun compressFile(fromFile: String, toFile: String) {
         if (fromFile.isInImgTypes() && !fromFile.endsWith(".9.png")) {
             val imgBitDepth = getImgBitDepth(fromFile)
@@ -185,7 +181,7 @@ class Tinypng(private val apiKey: String, private val imgTypesStr: String) {
         }
     }
 
-    // 白名单，指定压缩图片后缀
+    // 是否是要压缩的类型
     private fun String.isInImgTypes(): Boolean {
         imgTypes.forEach { imgSuffix ->
             if (this.endsWith(imgSuffix)) {
@@ -195,7 +191,7 @@ class Tinypng(private val apiKey: String, private val imgTypesStr: String) {
         return false
     }
 
-    // 获取图片位深，避免每次重复压缩
+    // 获取图片位深度，避免重复压缩
     private fun getImgBitDepth(imgPath: String): Int {
         val pngFile = File(imgPath)
         val fis = FileInputStream(pngFile)
@@ -207,7 +203,7 @@ class Tinypng(private val apiKey: String, private val imgTypesStr: String) {
         return depth
     }
 
-    // 排除一些文件目录
+    // 排除不需要扫描的目录
     private fun String.isExcludeFile(): Boolean {
         if ((contains("build")) || contains("intermediates") || contains(".gradle")) {
             return true
@@ -221,36 +217,32 @@ class Tinypng(private val apiKey: String, private val imgTypesStr: String) {
 
 代码写完之后，我们需要发布一下插件。找到 gralde task 中 publishing 下的 `publishMavenPublicationToMavenRepository` 点击发布
 
-![Alt text](https://aidaole.github.io/other/images/image_compress/publishing_task.png)
+![](images/tinypng_plugin/publish_task.png)
 
 发布成功之后，可以在项目中 `repo/` 文件夹下找到插件
 
-![Alt text](https://aidaole.github.io/other/images/image_compress/publish_succ_img.png)
+![](images/tinypng_plugin/publish_succ.png)
 
 ### 然后在项目中应用插件
 
 首先将 `/repo` 添加本地 maven 库
 
-**settings.gradle**
+**settings.gradle** 添加插件依赖本地库
 
 ```gradle
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+pluginManagement {
     repositories {
-        //...
-        maven {
-            url './repo'
-        }
+        // ...
+        maven { url './repo' }
     }
-}
-```
+}```
 
 在project的build.gradle中引用插件
 
 ```gradle
 buildscript {
     repositories {
-        dependencies { classpath 'com.aidaole.plugin:imgcompress:1.0' }
+        dependencies { classpath 'com.aidaole.plugin:tinypng:1.0' }
     }
 }
 ```
@@ -266,25 +258,25 @@ imgCompressConfig {
 ```
 
 
-
-
 ## 5. 运行效果
 
 sync 项目之后，会发现gradle task中多了一个 `compressImg` 的task
 
-![Alt text](./images/image_compress/compress_task.png)
+![](images/tinypng_plugin/see_comporess_task.png)
 
 然后运行此`compressImg`，在build窗口中查看压缩结果
 
 ```
 > Task :app:compressImg
-ImgCompress>apiKey: xxxxxxxxxxxxxxxxxxxxxxxx
-ImgCompress>imgTypes: 
-ImgCompress>root: C:\Codes\opensource\ImgCompressPlugin
-ImgCompress>imageTypes: [.png, .jpg, .jepg]
-ImgCompress>compress:C:\Codes\opensource\ImgCompressPlugin\app\src\main\res\mipmap-xxhdpi\test.png
+ImgCompress>apiKey: xxxxxxxxxxxx
+ImgCompress>imgTypes: .png|.jpg
+ImgCompress>root: C:\Codes\opensource\TinypngPlugin
+ImgCompress>imageTypes: [.png, .jpg]
+ImgCompress>compress:C:\Codes\opensource\TinypngPlugin\app\src\main\res\drawable\img1.png, imgBitDepth: 32
+ImgCompress>compress:C:\Codes\opensource\TinypngPlugin\app\src\main\res\drawable\img2.png, imgBitDepth: 32
+ImgCompress>compress:C:\Codes\opensource\TinypngPlugin\app\src\main\res\drawable\img3.png, imgBitDepth: 32
 
-BUILD SUCCESSFUL in 517ms
+BUILD SUCCESSFUL in 4s
 ```
 
 这里只放了一张图片在项目中，实际会扫描project下所有的图片进行压缩
