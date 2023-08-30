@@ -217,11 +217,11 @@ class Tinypng(private val apiKey: String, private val imgTypesStr: String) {
 
 代码写完之后，我们需要发布一下插件。找到 gralde task 中 publishing 下的 `publishMavenPublicationToMavenRepository` 点击发布
 
-![](images/tinypng_plugin/publish_task.png)
+![](https://github.com/aidaole/aidaole.github.io/raw/main/other/images/tinypng_plugin/publish_task.png)
 
 发布成功之后，可以在项目中 `repo/` 文件夹下找到插件
 
-![](images/tinypng_plugin/publish_succ.png)
+![](https://github.com/aidaole/aidaole.github.io/raw/main/other/images/tinypng_plugin/publish_succ.png)
 
 ### 然后在项目中应用插件
 
@@ -262,7 +262,7 @@ imgCompressConfig {
 
 sync 项目之后，会发现gradle task中多了一个 `compressImg` 的task
 
-![](images/tinypng_plugin/see_comporess_task.png)
+![](https://github.com/aidaole/aidaole.github.io/raw/main/other/images/tinypng_plugin/see_comporess_task.png)
 
 然后运行此`compressImg`，在build窗口中查看压缩结果
 
