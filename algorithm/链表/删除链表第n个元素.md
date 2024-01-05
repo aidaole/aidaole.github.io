@@ -1,8 +1,8 @@
-# 19. 删除链表的倒数第 N 个结点
+# Leetcode 19. 删除链表的倒数第 N 个结点
 
 给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
 
-```
+```java
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         // 前面插入一个代理头节点，防止越界
