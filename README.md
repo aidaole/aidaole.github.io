@@ -1,6 +1,6 @@
 ## 本站介绍
 
-欢迎关注[Github账号](https://github.com/aidaole)
+学习并记录自己学习的一些内容，欢迎学习交流和指正
 
 
 
