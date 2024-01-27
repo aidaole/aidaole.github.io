@@ -57,7 +57,7 @@ class ExampleUnitTest {
 
 这里有一个坑，我们如果想看覆盖率，这里选择
 
-![](images/robolectric/2024-01-15-00-01-03.png)
+![](images/robolectric/2024-01-15-00-01-03.png ':size=300')
 
 如果连着覆盖率跑单元测试，这里会报失败
 
@@ -76,6 +76,6 @@ Exception Details:
 
 解决方案，我们将跑覆盖率的测试配置修改一下：
 
-![](images/robolectric/2024-01-15-00-06-27.png)
+![](images/robolectric/2024-01-15-00-06-27.png ':size=700')
 
 只跑我们自己包名下的类，参考 [Coverage fails with Robolectric tests in AndroidStudio](https://github.com/robolectric/robolectric/issues/3023)

@@ -1,4 +1,4 @@
-* [Android](/android/jetpack/livedata.md)
+* [Android](/android/base/generisc.md)
 
 * [算法](/algorithm/)
 
