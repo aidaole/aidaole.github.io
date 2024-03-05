@@ -14,4 +14,4 @@
 
 ![插件截图](images/idea_eval/2024-03-05-07-45-56.png)
 
-[安装包下载链接](images/idea_eval/ide-eval-resetter-2.3.5-c80a1d.zip)
+[安装包下载链接](https://github.com/aidaole/aidaole.github.io/blob/main/tools/images/idea_eval/ide-eval-resetter-2.3.5-c80a1d.zip)
