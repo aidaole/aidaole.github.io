@@ -2,6 +2,8 @@
 
 ## 方法一
 
+## 方法一
+
 这里我们使用网上的一个idea插件，可以很轻松的无限试用idea全家桶
 
 插件地址：[jetbrans-eval-reset插件](https://zhile.io/2020/11/18/jetbrains-eval-reset-deprecated.html)
@@ -30,4 +32,4 @@
 
 如果遇到激活码无效，可重启电脑重试激活
 
-[jetbra下载地址](./images/idea_eval/jetbra.zip)
+[jetbra下载地址](https://github.com/aidaole/aidaole.github.io/blob/main/tools/images/idea_eval/jetbra.zip)
