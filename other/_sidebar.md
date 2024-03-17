@@ -6,3 +6,5 @@
     * [ASM实战注入框架](/other/injectservice.md)
 
     * [Android单元测试](/other/robolectric.md)
+
+    * [Android多语言工具](/other/multi_language.md)
