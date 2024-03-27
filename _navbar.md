@@ -4,4 +4,4 @@
 
 * [实战](/other/aimusic.md)
 
-* [常用工具](/tools/idea_eval.md)
+* [常用工具](/tools/jitpack_publish.md)
