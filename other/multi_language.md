@@ -40,7 +40,7 @@ python export_excel.py excel地址.xlsx 语言名称 xml地址 语言名称 xml�
 
 会将多种语言合并生成到同一个excel文件中
 
-![](images/multi_language/2024-04-06-11-08-16.png ':size=200')
+![](images/multi_language/2024-04-06-11-08-16.png ':size=300')
 
 ```shell
 python ./import_strings.py excel地址.xlsx 生成语言存放目录
