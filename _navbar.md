@@ -1,4 +1,4 @@
-* [Android](/android/base/generisc.md)
+* [Android](/android/easypermission.md)
 
 * [算法](/algorithm/)
 
