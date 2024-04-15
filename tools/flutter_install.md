@@ -1,0 +1,36 @@
+# 国内环境安装flutter
+
+1. 首先官网下载最新版本的flutter sdk，解压到自己的目录，并将 `flutter home/bin` 配置到环境变量中
+2. Android环境下，打开Android Studio的 sdkmanager， 安装 sdk tools->command line tools，并将 `android sdk home\cmdline-tools\latest` 配置到环境变量中
+3. 打开命令行，运行 `flutter doctor` 发现有错误
+```bash
+PS D:\> flutter doctor
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel stable, 3.19.5, on Microsoft Windows [版本 10.0.22631.3296], locale zh-CN)
+[✓] Windows Version (Installed version of Windows is version 10 or higher)
+[!] Android toolchain - develop for Android devices (Android SDK version 34.0.0)
+    ! Some Android licenses not accepted. To resolve this, run: flutter doctor --android-licenses
+[✓] Chrome - develop for the web
+[✗] Visual Studio - develop Windows apps
+    ✗ Visual Studio not installed; this is necessary to develop Windows apps.
+      Download at https://visualstudio.microsoft.com/downloads/.
+      Please install the "Desktop development with C++" workload, including all of its default components
+[✓] Android Studio (version 2023.2)
+[✓] Connected device (3 available)
+[!] Network resources
+    ✗ A cryptographic error occurred while checking "https://storage.googleapis.com/": Connection terminated during
+      handshake
+      You may be experiencing a man-in-the-middle attack, your network may be compromised, or you may have malware
+      installed on your computer.
+    ✗ A network error occurred while checking "https://maven.google.com/": 信号灯超时时间已到
+```
+需要配置一下国内的flutter 网络环境, 请参考 [https://flutter.cn/community/china](https://flutter.cn/community/china)
+主要是执行
+```shell
+$env:PUB_HOSTED_URL="https://pub.flutter-io.cn"
+$env:FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
+```
+4. 执行完之后， 发现网络环境已经OK了，下一步同意开发者协议 `flutter doctor --android-licenses`
+5. OK 最后一个错误是 `visualstudio` 没有安装， 这个不用管，要开发windows应用才需要安装
+
+

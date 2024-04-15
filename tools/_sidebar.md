@@ -7,3 +7,5 @@
     * [Idea全家桶激活](/tools/idea_eval.md)
 
     * [Robolectric单元测试覆盖率](/tools/robolectric.md)
+
+    * [Flutter安装与配置](/tools/flutter_install.md)
