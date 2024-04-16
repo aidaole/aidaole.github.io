@@ -1,6 +1,8 @@
 # 国内环境安装flutter
 
-1. 首先官网下载最新版本的flutter sdk，解压到自己的目录，并将 `flutter home/bin` 配置到环境变量中
+参考文档 [https://flutter.cn/community/china](https://flutter.cn/community/china)
+
+1. 首先官网下载最新版本的flutter sdk，解压到自己的目录，并将 `flutter home/bin` 配置到环境变量中。但是不要走默认的 [https://storage.googleapis.com](https://storage.googleapis.com) 去下载， 要使用国内的镜像下载地址 [https://flutter.cn/docs/release/archive?tab=windows](https://flutter.cn/docs/release/archive?tab=windows)，否则后期可能依赖拉不下来
 2. Android环境下，打开Android Studio的 sdkmanager， 安装 sdk tools->command line tools，并将 `android sdk home\cmdline-tools\latest` 配置到环境变量中
 3. 打开命令行，运行 `flutter doctor` 发现有错误
 ```bash
@@ -24,8 +26,7 @@ Doctor summary (to see all details, run flutter doctor -v):
       installed on your computer.
     ✗ A network error occurred while checking "https://maven.google.com/": 信号灯超时时间已到
 ```
-需要配置一下国内的flutter 网络环境, 请参考 [https://flutter.cn/community/china](https://flutter.cn/community/china)
-主要是执行
+需要配置一下国内的flutter 网络环境, 主要是执行。最好是自己在环境变量中手动添加，下面命令只能当此生效
 ```shell
 $env:PUB_HOSTED_URL="https://pub.flutter-io.cn"
 $env:FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
