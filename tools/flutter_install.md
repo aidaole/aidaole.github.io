@@ -33,5 +33,14 @@ $env:FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
 ```
 4. 执行完之后， 发现网络环境已经OK了，下一步同意开发者协议 `flutter doctor --android-licenses`
 5. OK 最后一个错误是 `visualstudio` 没有安装， 这个不用管，要开发windows应用才需要安装
-
+6. 这个时候创建flutter项目，然后运行，可能遇到下面的错误，是因为下载不到对应的gradle wrapper版本。可以手动下载对应的版本之后，放到 `./gradle/wrapper/xxx` 版本中即可
+```bash
+Exception in thread "main" java.net.ConnectException: Connection timed out: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:593)
+  // ...
+	at org.gradle.wrapper.Download.downloadInternal(Download.java:58)
+```
 
