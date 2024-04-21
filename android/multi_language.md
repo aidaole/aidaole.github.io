@@ -14,8 +14,6 @@ android中我们适配多语言是在 `values-xxx` 目录中创建对应语言�
 1. 要适配一个完整国家语言时, 可以非常快捷的知道哪些 `key` 需要翻译, 一键导出列表
 2. 翻译完成之后, 不需要手动一个一个根据 `key` 替换到对应的 `string.xml` 中, 避免出错
 
-## 
-
 项目地址: [https://github.com/aidaole/AndroidMultiLan](https://github.com/aidaole/AndroidMultiLan)
 
 ## 使用说明

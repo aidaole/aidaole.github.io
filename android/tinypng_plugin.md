@@ -1,5 +1,7 @@
 # 图片压缩插件
 
+[![](https://jitpack.io/v/aidaole/TinypngPlugin.svg)](https://jitpack.io/#aidaole/TinypngPlugin)
+
 在android开发中，对包体积的优化有很多方法，通常图片在包体积中会占很大一部分。通常我们会使用更小的图片如: webp, .9.png, svg 等方式减少资源的大小，对于一些不可避免的 .png, .jpg 图片通常会采用压缩的方式来减少其体积。
 
 目前主流的方法就是将项目中的所有图片都找出来，然后放到 [Tinypng](https://tinypng.com/) 或者用其他压缩工具压缩之后，再替换掉项目中的图片。这个流程如果人工操作其实比较繁琐，而且也容易出错。所以这里通过编写 `gradle plugin` 的方式编写脚本，来达到一键压缩项目中所有图片并替换的功能。
@@ -11,9 +13,11 @@
 3. 怎么发布一个gradle插件
 4. 提供一个好用的图片压缩批量插件
 
-可以直接看代码，Github源码地址：[TinypngPlugin](https://github.com/aidaole/TinypngPlugin)
+## 0. 直接使用
 
-## 1. 创建gradle插件
+参考Github地址: [https://github.com/aidaole/TinypngPlugin](https://github.com/aidaole/TinypngPlugin)
+
+## 1. 看实现原理
 
 创建一个 java library: `tinypng_plugin`
 
