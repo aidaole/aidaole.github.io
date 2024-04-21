@@ -32,4 +32,5 @@
 
     * [两数之和](/algorithm/数组/两数之和.md)
     * [三数之和](/algorithm/数组/三数之和.md)
+    * [四数之和](/algorithm/数组/四数之和.md)
 
