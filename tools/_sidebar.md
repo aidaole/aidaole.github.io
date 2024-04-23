@@ -9,3 +9,5 @@
     * [Robolectric单元测试覆盖率](/tools/robolectric.md)
 
     * [Flutter安装与配置](/tools/flutter_install.md)
+    
+    * [Alist 配置阿里云网盘](/tools/alist_config.md)
