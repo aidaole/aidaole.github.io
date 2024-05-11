@@ -21,44 +21,56 @@
 
 这里配置意思是， 在当前目录创建  `images/当前markdown文件名/` 为前缀的目录，并且将图片放进去
 
-## 插件三：learn-Markdown
+## 插件三：Markdown All in One
 
 用惯了 `typra` 的同学，肯定对里面的快捷键年年不忘，安装此插件之后，再配置快捷键，可实现类似 `typra` 的功能
 
-```json
-{
-    "key": "ctrl+b",
-    "command": "formatBold",
-    "when": "editorTextFocus && !vim.active && editorLangId == 'markdown'"
-  },
-  {
-    "key": "ctrl+i",
-    "command": "formatItalic",
-    "when": "editorTextFocus && !vim.active && editorLangId == 'markdown'"
-  },
-  {
-    "key": "ctrl+shift+`",
-    "command": "formatCode",
-    "when": "editorTextFocus && !vim.active && editorLangId == 'markdown'"
-  },
-  {
-    "key": "ctrl+t",
-    "command": "insertTable",
-    "when": "editorTextFocus && !vim.active && editorLangId == 'markdown'"
-  },
-  {
-    "key": "ctrl+shift+[",
-    "command": "insertNumberedList",
-    "when": "editorTextFocus && !vim.active && editorLangId == 'markdown'"
-  },
-  {
-    "key": "ctrl+shift+]",
-    "command": "insertBulletedList",
-    "when": "editorTextFocus && !vim.active && editorLangId == 'markdown'"
-}
-```
-
 vscode 还支持部分代码补全功能，在设置中添加
+
+我的常用配置:
+
+```json
+[
+    {
+        "key": "ctrl+shift+v",
+        "command": "extension.pasteImage",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+v",
+        "command": "-extension.pasteImage",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "editor.action.goToDeclaration",
+        "when": "editorTextFocus && resourceLangId != markdown"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-editor.action.goToDeclaration",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+f4",
+        "command": "-workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "alt+w",
+        "command": "editor.action.smartSelect.grow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-editor.action.smartSelect.grow",
+        "when": "editorTextFocus"
+    }
+]
+```
 
 ```json
     "[markdown]": {
