@@ -6,27 +6,21 @@
 
 ## 2. Dart Data Class Generator
 
+类似还有:  **Dart DTO Generator**, **Json to Dart Model**, 都可以尝试对比以下
+
 生成dart数据类模板, 构造方法, toString, Json转换等 非常实用
 
 ## 3. Flutter & Dart Utilities
 
 也是提供代码块模板, `fu-开头` , 以及常用的框架模板, mvu, getx代码块, 同时提供 `Wrap` 右键功能, 非常好用
 
-## 4. generate-resource-dart-code
+## 4. flutter-sync-assets-import
 
-自动生成图片资源索引到 `assets.dart` 中, 自动监听 `lib/assets/image` 和 `lib/assets/svg` 目录, 生成对应资源
-
-记得在 yaml 文件中配置引用资源
-
-```
-flutter:
-  assets:
-    - assets/images/
-```
+同Android Studio的FlutterAssetsGenerator, 两个IDE可以兼容
 
 ## 5. GetX Snippets
 
-GetX代码模板, 如果使用getx, 自动生成模块代码, 路由等 此插件必不可少
+如果使用GetX框架可安装, 生成代码模板, 如果使用getx, 自动生成模块代码, 路由等 此插件必不可少
 
 ## 6. indent-rainbow
 
@@ -36,14 +30,14 @@ GetX代码模板, 如果使用getx, 自动生成模块代码, 路由等 此插�
 
 类似于 `Dart Data Class Generator` , 一键生成所有data类代码
 
-## 8. vscode-flutter-i18n-json
+## 8. Flutter Intl + Arb Editor
 
-flutter 国际化生成string 映射工具
+flutter 国际化, 自动生成string 映射工具
 
-## 9. Git Gprah
+## 9. GitLens
 
-查看git分支合并, 提交修改详情等
+vscode中最好的git工具, 功能相当丰富
 
-## 10. Git History
+## 10. Snippet Creator
 
-查看某个文件的修改记录等
+方便生成自己的code Snippet
