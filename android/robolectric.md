@@ -1,4 +1,4 @@
-# 使用Robolectric做UnitTest
+# Robolectric单元测试覆盖率
 
 在Android UnitTest中，如果我们想测试Activity代码，那必须要构造一个Android虚拟环境来完成，Robolectric就用于此。它不想Expresso一样，需要结合ActivityScenarioRule使用真实的环境，所以写起单元测试来非常方便。
 
