@@ -5,3 +5,4 @@
     * [Idea全家桶激活](/tools/idea_eval.md)
     * [Alist 配置阿里云网盘](/tools/alist_config.md)
     * [vscode常用配置](/tools/vscode_settings.md)
+    * [clash-verge](/tools/clash-verge.md)
