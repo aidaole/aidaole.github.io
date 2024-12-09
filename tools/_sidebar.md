@@ -6,3 +6,4 @@
     * [Alist 配置阿里云网盘](/tools/alist_config.md)
     * [vscode常用配置](/tools/vscode_settings.md)
     * [clash-verge](/tools/clash-verge.md)
+    * [Cursor 常用配置](/tools/cursor_settings.md)
