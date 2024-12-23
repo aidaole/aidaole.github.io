@@ -3,4 +3,4 @@
 > 欢迎学习交流和指正
 
 [Github](https://github.com/aidaole)
-[Get Started](/android/easypermission.md)
+[Get Started](/android/aimusic.md)

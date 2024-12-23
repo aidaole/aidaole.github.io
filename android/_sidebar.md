@@ -1,8 +1,8 @@
 * 实战
+* 
+    * [AiMusic音乐app](/android/aimusic.md)
 
     * [EasyPermission权限请求框架](/android/easypermission.md)
-
-    * [AiMusic音乐app](/android/aimusic.md)
 
     * [图片压缩脚本](/android/tinypng_plugin.md)
     

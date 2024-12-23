@@ -1,4 +1,4 @@
-* [Android](/android/easypermission.md)
+* [Android](/android/aimusic.md)
 
 * [Flutter](/flutter/flutter_install.md)
 
