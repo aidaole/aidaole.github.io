@@ -8,8 +8,6 @@
     
     * [ASM实战注入框架](/android/injectservice.md)
 
-    * [Android多语言工具](/android/multi_language.md)
-
 * 基础
 
     * [kotlin泛型-协变逆变](/android/generisc.md)
