@@ -36,6 +36,12 @@ nums[:] # 切片, 等同于浅拷贝
 copy.deepcopy(nums) # 深拷贝
 ```
 
+### 字符串
+
+```python
+sorted_s = "".join(sorted(s)) # 将字符串按字典序排序
+```
+
 ### 链表
 
 ```python
