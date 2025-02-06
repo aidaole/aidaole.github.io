@@ -30,10 +30,15 @@ reverseList = nums.reverse() # 反转
 nums[::-1] # 反转, 同reverse
 nums.sort() # 升序
 nums.sort(reverse=True) # 降序
+sorted(nums) # 使用排序函数
+nums[2:6] = sorted(nums[2:6]) # 只对数组中2~5索引的位置进行排序
 
 nums.copy() # 浅拷贝
 nums[:] # 切片, 等同于浅拷贝
 copy.deepcopy(nums) # 深拷贝
+
+float('-inf') # 负无穷大
+float('inf') # 正无穷大
 ```
 
 ### 字符串
@@ -66,4 +71,7 @@ if (value in map.values()) # 判断map中有某个value
 ### set
 
 ```
+s = set()
+s.put(value)
+s.remove(value)
 ```
