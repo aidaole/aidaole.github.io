@@ -19,6 +19,7 @@ nums.insert(1, 10) # 指定位置插入
 nums.extend([1,2,3]) # 数组合并
 
 del nums[1] # 删除指定位置数字
+nums.pop() # 删除末尾元素 同 del nums[-1]
 nums.remove(10) # 删除数字, 只删除第一个匹配上的
 num = nums.pop(1) # 删除位置1数字, 并返回
 nums.clear() # 清理数组
