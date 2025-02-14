@@ -157,7 +157,14 @@ val scope = CoroutineScope(Dispatchers.Main + Job() + CoroutineName("MyScope"))
 
 // 基本的调度器使用
 scope.launch(Dispatchers.Main) {    // UI线程
-    // 更新UI
+    launch { // 运行在父协程的上下文中，Main线程
+        println("main runBlocking      : I'm working in thread ${Thread.currentThread().name}")
+    }
+    launch(Dispatchers.Unconfined) { // 不受限的——将工作在主线程中, 这里虽然打印在Main线程, 但是如果加个delay(), delay之后就可能在其他线程执行
+        println("Unconfined            : I'm working in thread ${Thread.currentThread().name}")
+        delay(500)
+        println("Unconfined            : 这里在什么线程是不确定的 ${Thread.currentThread().name}")
+    }
     withContext(Dispatchers.IO) {    // IO线程
         // 网络请求或文件操作
     }

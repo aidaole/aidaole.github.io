@@ -37,7 +37,7 @@ EasyPermission.requestPermission(
 ```
 只需要在回调中，判断是否两个权限都授予即可，是不是非常方便。
 
-![](images/easypermission/2024-11-24-12-31-54.png ':size=300')
+![](images/easypermission/2024-11-24-12-31-54.png ':size=150')
 
 
 ## 请求文件权限
@@ -106,4 +106,4 @@ EasyPermission.requestPermission(
 }
 ```
 
-![](images/easypermission/2024-11-24-13-20-57.png ':size=300')
+![](images/easypermission/2024-11-24-13-20-57.png  ':size=150')
