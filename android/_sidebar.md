@@ -1,6 +1,7 @@
 * 实战
 
     * [AiMusic音乐app](/android/aimusic.md)
+    * [EasyTrace性能分析工具](/android/easytrace.md)
     * [EasyPermission权限请求框架](/android/easypermission.md)
     * [图片压缩脚本](/android/tinypng_plugin.md)
     * [ASM实战注入框架](/android/injectservice.md)
