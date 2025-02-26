@@ -2,10 +2,32 @@
 
 ```json
 {
-  "workbench.colorTheme": "Default Dark Modern",
-  "pasteImage.path": "images/${currentFileNameWithoutExt}",
-  "pasteImage.suffix": "':size=300'",
-  "[markdown]": {
+    "window.commandCenter": 1,
+    "workbench.activityBar.orientation": "vertical",
+    "window.zoomLevel": -1,
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": "off",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "always",
+            "source.fixAll": "always"
+        },
+        "editor.guides.bracketPairs": true,
+    },
+    
+    "editor.fontSize": 14,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "workbench.colorTheme": "Atom One Light",
+    "pasteImage.path": "images/${currentFileNameWithoutExt}",
+    "pasteImage.suffix": "':size=300'",
+    "[markdown]": {
     // 快速补全
     "editor.quickSuggestions": {
       "other": true,
@@ -20,20 +42,5 @@
     // 使用enter 接受提示
     // "editor.acceptSuggestionOnEnter": "on",
   },
-  "git.enableSmartCommit": true,
-  "git.confirmSync": false,
-  "editor.fontSize": 16,
-  "dart.flutterSdkPath": "D:\\Greenwares\\flutter",
-  "explorer.fileNesting.enabled": true,
-  "explorer.fileNesting.patterns": {
-    "pubspec.yaml": ".packages, pubspec.lock, .flutter-plugins, .flutter-plugins-dependencies, .metadata, analysis_options.yaml, dartdoc_options.yaml"
-  },
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit"
-  },
-  "window.openFilesInNewWindow": "on",
-  "window.openFoldersInNewWindow": "on",
-  "window.zoomLevel": 1
 }
 ```
