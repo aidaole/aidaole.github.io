@@ -5,11 +5,11 @@
 > 欢迎学习交流和指正
 
 <div class="card-container">
-  <a href="/android/aimusic.md" class="card">
+  <a href="https://aidaole.github.io/#/android/aimusic" class="card">
     <img src="images/ic_aidaole.jpeg" class="card-icon" alt="Github">
     <div class="card-title">开始阅读</div>
   </a>
-  <a href="/algorithm/README.md" class="card">
+  <a href="https://aidaole.github.io/#/algorithm/" class="card">
     <img src="images/ic_leetcode.png" class="card-icon" alt="算法">
     <div class="card-title">算法刷起来</div>
   </a>
